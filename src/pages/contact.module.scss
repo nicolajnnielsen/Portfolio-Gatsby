@@ -1,0 +1,65 @@
+@import '../styles/settings.scss';
+
+.container {
+    grid-column: content-1 / content-2;
+}
+
+.form {
+	display: flex;
+	// flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.form-group {
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.5em;
+
+	label {
+		padding-left: 15px;
+	}
+
+	span {
+		font-size: 0.875rem;
+		padding-left: 15px;
+	}
+
+	input {
+		// flex: 1 1 150px;
+		height: 40px;
+	}
+
+}
+
+
+.btn {
+	flex-basis: 100%;
+	margin-top: 1em;
+}
+
+.submit-msg {
+	flex-basis: 100%;
+	font-size: 1.25rem;
+	margin: 1em 0 0;
+}
+
+.submit-msg--success {
+	color: #00910E;
+}
+
+.submit-msg--fail {
+	color: $primary-red;
+}
+
+@media (min-width: 791px) {
+	.submit-msg {
+		text-align: end;
+	}
+}
+
+@media (min-width: 961px) {
+	.btn {
+		margin-top: 1.5em;
+	}
+}

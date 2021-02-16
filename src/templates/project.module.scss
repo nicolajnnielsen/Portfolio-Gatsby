@@ -1,0 +1,217 @@
+@import '../styles/settings.scss';
+
+@media (max-width: 899px) {
+	.portfolio-gallery {
+		grid-column: 1 / -1;
+		box-shadow: none;
+		padding: 0;
+		max-width: 100%;
+	}
+}
+
+
+.portfolio-gallery {
+	// max-height: 400px;
+	div {
+		// max-height: 400px;
+
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+.content {
+	grid-row: content-2 / content-3;
+	display: flex;
+	flex-direction: column;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	box-shadow: inset -5px -5px 10px rgba(218, 218, 218, 0.04), inset 5px 5px 10px rgba(0, 0, 0, 0.7);
+	padding: 1.5em;
+	border: 2px solid lighten($color: #121212, $amount: 10%);
+	margin-bottom: 1em;
+
+	a {
+		margin-bottom: 0.25em;
+		font-size: 1.125rem;
+	}
+
+	ul {
+		margin-bottom: 0.75em;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	> div {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.info__list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0.5em;
+
+	li {
+		display: inline;
+		&::after {
+			content: ", "
+		}
+		&:last-child::after {
+			content: none;
+		}
+	}
+}
+
+@media (min-width: 791px) {
+	.content {
+		grid-area: content-3;
+		flex-direction: row;
+		flex-wrap: wrap;
+		// max-width: 1000px;
+		// justify-self: center;
+
+		h1 {
+			flex-basis: 100%;
+		}
+	}
+
+	.text {
+		flex: 1 1 400px;
+		order: 2;
+	}
+
+	.info {
+		position: sticky;
+		top: 1em;
+		flex-direction: column;
+		align-self: flex-start;
+		flex: 0 0 200px;
+		order: 3;
+		margin: 0 0 0 1em;
+		// border: none;
+
+		h3 {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.info {
+		flex-basis: 250px;
+		margin-left: 1.5em;
+	}
+}
+
+@media (min-width: 1370px) {
+	.content {
+		justify-content: center;
+
+		h1 {
+			flex: 0 1 700px;
+			margin-right: calc(300px + 2rem);
+		}
+	}
+
+	.text {
+		flex: 0 1 700px;
+	}
+
+	.info {
+		flex: 0 0 300px;
+		margin-left: 2rem;
+	}
+}
+
+.image-gallery-icon {
+	color: $primary-red;
+
+	&:hover {
+		color: $primary-blue;
+	}
+}
+
+.image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
+	border-color: $primary-blue;
+}
+
+.image-gallery-slide .image-gallery-description {
+	bottom: 0;
+	padding: 5px 10px;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+	max-height: 500px;
+}
+
+.image-gallery-content.fullscreen .image-gallery-slide .image-gallery-image {
+	max-height: calc(100vh - 80px);
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+	max-height: 50px;
+	object-fit: contain;
+}
+
+@media (min-width: 791px) {
+	.image-gallery-slide .image-gallery-description {
+		bottom: 0;
+		padding: 10px 20px;
+	}
+}
+
+.image-gallery.fullscreen-modal {
+	background: linear-gradient(351deg, rgba(218, 218, 218,0.04) 0%, rgba(218, 218, 218,0.04) 46%,rgba(145, 145, 145,0.04) 46%, rgba(145, 145, 145,0.04) 75%,rgba(71, 71, 71,0.04) 75%, rgba(71, 71, 71,0.04) 100%),linear-gradient(57deg, rgba(218, 218, 218,0.04) 0%, rgba(218, 218, 218,0.04) 43%,rgba(145, 145, 145,0.04) 43%, rgba(145, 145, 145,0.04) 49%,rgba(71, 71, 71,0.04) 49%, rgba(71, 71, 71,0.04) 100%),linear-gradient(204deg, rgba(218, 218, 218,0.04) 0%, rgba(218, 218, 218,0.04) 63%,rgba(145, 145, 145,0.04) 63%, rgba(145, 145, 145,0.04) 86%,rgba(71, 71, 71,0.04) 86%, rgba(71, 71, 71,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+	z-index: 100;
+}
+
+.image-gallery-content.fullscreen {
+	background: transparent;
+}
+
+@media (max-width: 768px) {
+	.image-gallery-fullscreen-button .image-gallery-svg {
+		height: 35px;
+		width: 35px;
+	}
+}
+
+@media (max-width: 790px) {
+	.image-gallery-thumbnails-wrapper {
+		display: none;
+	}
+
+	.image-gallery-slide-wrapper .image-gallery-description {
+		opacity: 0;
+	}
+}
+
+
+@media (hover: hover) {
+	.image-gallery-slide-wrapper button,
+	.image-gallery-slide-wrapper .image-gallery-index,
+	.image-gallery-slide-wrapper .image-gallery-description  {
+		opacity: 0;
+		transition: 250ms ease-in;
+	}
+	
+	.image-gallery-slide-wrapper:hover button,
+	.image-gallery-slide-wrapper:hover .image-gallery-index,
+	.image-gallery-slide-wrapper:hover .image-gallery-description,
+	.image-gallery-slide-wrapper:focus-within button,
+	.image-gallery-slide-wrapper:focus-within .image-gallery-index,
+	.image-gallery-slide-wrapper:focus-within .image-gallery-description {
+		opacity: 1;
+	}
+}
+

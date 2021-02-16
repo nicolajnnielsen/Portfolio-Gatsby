@@ -1,0 +1,46 @@
+.contactLinks {
+	grid-area: aside;
+	display: flex;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(218, 218, 218, 0.04);
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(218, 218, 218, 0.05), inset 2px 2px 2px rgba(218, 218, 218, 0.05), inset -2px -2px 2px rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+	padding: 5px;
+	justify-content: space-evenly;
+
+	a {
+		display: flex;
+		justify-content: center;
+		flex: 0 1 60px;
+		height: 100%;
+
+		svg {
+			height: 100%;
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	.contactLinks {
+		flex-direction: column;
+		position: fixed;
+		right: 30px;
+		top: 50%;
+		padding: 10px;
+		transform: translateY(-50%);
+		box-shadow: inset 14px 14px 28px #0a0a0a, inset -14px -14px 28px #1a1a1a;
+		box-shadow: 14px 14px 28px #0a0a0a, -14px -14px 28px #1a1a1a;
+		box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3), -5px -5px 3px rgba(218, 218, 218, 0.05);
+		border: 1px solid rgba(221, 0, 72, 0.2);
+	
+		a {
+			max-width: 50px;
+			margin: 10px 0;
+			flex-basis: 50px;
+
+			svg {
+				width: 100%;
+			}
+		}
+	}
+
+}

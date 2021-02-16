@@ -1,0 +1,162 @@
+@import '../styles/settings.scss';
+
+.site-header {
+	grid-area: header;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	// background: #121212;
+	margin: 0;
+	// box-shadow: 5px -5px 0px #070707, -5px 5px 0px #1d1d1d;
+	// box-shadow: inset 22px 22px 44px #0b0b0b, inset -22px -22px 44px #191919;
+	// box-shadow: inset 9px -9px 0px #070707, inset -9px 9px 0px #1d1d1d;
+	// box-shadow: inset -9px -9px 0px #070707, inset 9px 9px 0px #1d1d1d;
+	// box-shadow: inset -9px -9px 7px #070707, inset 9px 9px 7px #1d1d1d;
+
+	svg {
+		flex: 0 0 100px;
+		height: 100%;
+		max-height: 100%;
+
+		&:hover .logo-cls-1 {
+			fill: $primary-blue;
+		}
+	}
+}
+
+@media (min-width: 791px) {
+	.site-header {
+		padding: 10px;
+
+		> svg {
+			display: none;
+		}
+	} 
+}
+
+.site-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #121212;
+	z-index: 90;
+	width: 100%;
+	height: 50px;
+	padding: 0 5px;
+
+	> svg {
+		display: none;
+	}
+
+	> a {
+		color: $primary-blue;
+		text-decoration: none;
+		color: $primary-red;
+		font-size: 1rem;
+		text-shadow: 0 0 10px $primary-red;
+		transition: 300ms cubic-bezier(.18,.89,.32,1.48);
+		height: 100%;
+		display: inline-flex;
+		align-items: center;
+		padding: 0;
+		// font-family: Orbitron;
+		font-family: Nasalization;
+		// font-family: Evolve;
+		// font-family: Evolve Evo;
+		// font-family: good_timingbold;
+		// font-family: 'Exo 2';
+		// @include lhCrop(1.5);
+
+		&:hover {
+			color: $primary-blue;
+			text-shadow: 0 0 10px $primary-blue;
+			border: 2px solid rgba(22, 180, 222, 0.6);
+		}
+		
+		&.is-active {
+			color: $primary-blue;
+			text-shadow: 0 0 10px $primary-blue;
+		
+			// &:hover {
+			// 	color: $primary-red;
+			// 	text-shadow: 0 0 10px $primary-red;
+			// }
+		}
+	}
+}
+
+@media (min-width: 360px) {
+	.site-nav a {
+		font-size: 1.125rem;
+	}
+}
+
+@media (min-width: 450px) {
+	.site-nav a {
+		font-size: 1.25rem;
+	}
+}
+
+@supports (font-size: clamp(16px, 5.5vw, 26px)) {
+	.site-nav a {
+		font-size: clamp(16px, 5vw, 24px);
+	}
+}
+
+@media (min-width: 791px) {
+	.site-nav {
+		flex: 1 0 300px;
+		height: initial;
+		background: none;
+		position: initial;
+		justify-content: space-evenly;
+		padding: 0;
+
+		> svg {
+			display: initial;
+		}
+
+		> a {
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(218, 218, 218, 0.04);
+			padding: 0.4em 1em;
+			font-size: 1.5rem;
+			height: initial;
+			border-radius: 10px;
+			border: 2px solid rgba(221, 0, 72, 0.2);
+			border: 2px solid rgba(221, 0, 72, 0.2);
+
+			&:active, &.is-active {
+				box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(218, 218, 218, 0.04);
+				border: 2px solid rgba(22, 180, 222, 0.2);
+				text-shadow: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 961px) {
+	.site-nav a {
+		font-size: $l-size;
+	}
+}
+
+@media (pointer: fine) {
+	.site-nav a:hover {
+		color: $primary-blue;
+		text-shadow: none;
+	}
+}
+
+a:focus {
+	outline: 1px dotted currentColor;
+}
+
+@media (min-width: 2000px) {
+	.site-header {
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+}
