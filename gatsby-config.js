@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: "Nicolaj N. Nielsen Portfolio",
+    titleTemplate: "%s | Nicolaj N. Nielsen",
     description: "My personal web development portfolio.",
     author: "Nicolaj N. Nielsen",
+    url: "https://nicolajnielsen.dev"
   },
   plugins: [
     "gatsby-plugin-sass",

@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
+import Seo from '../components/seo';
 
 import projectStyles from './project.module.scss';
 
@@ -24,6 +25,7 @@ const Project = ({data}) => {
     console.log(project);
     return (
         <Layout>
+            <Seo title={`${project.frontmatter.title} - Project`} />
             {/* <div className="portfolio-gallery content-area__1and2 skeuMorphBg" initial="initial" animate="enter" exit="exit" variants={PageVariant} transition={PageTransition}>
                 <ReactImageGallery items={images} showPlayButton={false} lazyLoad={true} useBrowserFullscreen={false} showIndex={true} showThumbnails={showThumb} onErrorImageURL={ErrorImg} onScreenChange={screenModeChange} />
             </div> */}
@@ -37,7 +39,7 @@ const Project = ({data}) => {
                                 <li>{skill}</li>
                             ))}
                         </ul>
-                        {project.frontmatter.link && <a href={project.frontmatter.link}>Live Demo</a>}
+                        {project.frontmatter.link && <a href={project.frontmatter.link}>View Demo</a>}
                         {project.frontmatter.gitLink && <a href={project.frontmatter.gitLink}>View Code</a>}
                     </div>
                 </aside>

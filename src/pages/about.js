@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Layout from '../components/layout';
+import Seo from '../components/seo';
 import Skill from '../components/skills';
 
 import aboutStyles from './about.module.scss';
@@ -32,6 +33,7 @@ const About = () => {
 
     return (
         <Layout>
+            <Seo title="About" />
             <main className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
                     <h1 className={aboutStyles.objectHeader}>whoisnicolaj: {"{"}</h1>

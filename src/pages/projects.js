@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react'
 import Layout from '../components/layout'
 import ProjectCard from '../components/projectCard';
+import Seo from '../components/seo';
 
 import projectsStyles from './projects.module.scss';
 
@@ -59,6 +60,7 @@ const Projects = ({data}) => {
 
     return (
         <Layout>
+            <Seo title="Projects" />
             <main className={`${projectsStyles.portfolio}`}>
                 {data.allMarkdownRemark.edges.map(({ node: { frontmatter: { title, coverImage: img, description }, fields: { slug } } }, index) => {
                     return (

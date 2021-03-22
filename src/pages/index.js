@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import Layout from "../components/layout";
 import ProjectCard from "../components/projectCard";
+import Seo from "../components/seo";
 
 import indexStyles from "./index.module.scss";
 
@@ -32,6 +33,7 @@ const IndexPage = () => {
     `);
   return (
     <Layout>
+      <Seo title="Welcome" />
       <main className={indexStyles.frontpageIntro} >
         <h1>Nicolaj N. Nielsen</h1>
         <h2>Frontend Developer...</h2>
