@@ -36,7 +36,7 @@ const About = () => {
             <Seo title="About" />
             <main className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
-                    <h1 className={aboutStyles.objectHeader}>whoisnicolaj: {"{"}</h1>
+                    <h1 className={aboutStyles.objectHeader}>frontend-developer: {"{"}</h1>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>name:</span> <span className={aboutStyles.objectValue}>'Nicolaj N. Nielsen'</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>age:</span> <span className={aboutStyles.objectValue}>29</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>education:</span> <span className={aboutStyles.objectValue}>'Multimedia Design and Communication - University College Nordjylland'</span>,</p>

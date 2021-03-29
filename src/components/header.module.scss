@@ -152,6 +152,7 @@
 
 a:focus {
 	outline: 1px dotted currentColor;
+	outline-offset: 4px;
 }
 
 @media (min-width: 2000px) {

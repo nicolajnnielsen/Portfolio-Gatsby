@@ -10,5 +10,11 @@ skills:
 link: "https://www.guestposts.dk/"
 hightlight: true
 description: WordPress Site
-
+images: [
+    {
+        img: Guestposts_Desktop.png,
+        alt: 'Guestposts.dk homepage on desktop',
+        description: 'Desktop version of front page',
+    },
+]
 ---

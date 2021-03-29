@@ -3,6 +3,6 @@
 My portfolio, built with Gatsby using markdown posts.
 
 ## TODO
-- Create SEO component
-- Add Gallery to projects - try using MDX on new branch
+- Add more info to SEO component
 - Add Page transitions
+- more uniformity in focus states, apply focus-visible states to fx projects

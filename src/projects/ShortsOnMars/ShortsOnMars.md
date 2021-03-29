@@ -10,6 +10,28 @@ link: "https://shortsonmars.netlify.app/"
 gitLink: "https://github.com/nicolajnnielsen/ShortsOnMars"
 hightlight: true
 description: React App
+images: [
+    {
+        img: shortsonmars-desktop.jpg,
+        alt: 'Shorts On Mars - Mars Weather App',
+        description: 'Weather info Desktop',
+    },
+    {
+        img: shortsonmars-mobile.png,
+        alt: 'Shorts On Mars - Mars Weather App',
+        description: 'Weather info Mobile',
+    },
+    {
+        img: shortsonmars-mobile-week.png,
+        alt: 'Mobile version with week week view open',
+        description: 'Week view of mobile version',
+    },
+    {
+        img: shortsonmars-desktop-menu.png,
+        alt: 'Shorts On Mars - Mars Weather App',
+        description: Desktop version with modal and menu open',
+    },
+]
 ---
 
 # Short On Mars

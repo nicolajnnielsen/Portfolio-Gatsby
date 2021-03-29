@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
+import ReactImageGallery from 'react-image-gallery';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
@@ -14,21 +15,57 @@ export const query = graphql`
                 link
                 hightlight
                 gitLink
+                images {
+                    img {
+                        childImageSharp {
+                            fixed(width: 95) {
+                                src
+                            }
+                            fluid(maxWidth: 1500) {
+                                srcSet
+                                sizes
+                                originalImg
+                                src
+                            }
+                        }
+                    }
+                    description
+                }
             }
             html
         }
     }
 `;
 
-const Project = ({data}) => {
+const Project = ({ data }) => {
+    const [showThumb, setShowThumb] = useState(true);
     const project = data.markdownRemark;
     console.log(project);
+    const images = project.frontmatter.images.map((image, i) => {
+        return {
+            original: image.img.childImageSharp.fluid.originalImg,
+            originalAlt: image.description,
+            thumbnail: image.img.childImageSharp.fixed.src,
+            thumbnailAlt: image.description,
+            description: image.description,
+            srcSet: image.img.childImageSharp.fluid.srcSet,
+            sizes: image.img.childImageSharp.fluid.sizes
+        }
+    })
+
+    const screenModeChange = (full) => {
+        setShowThumb(prevState => !prevState);
+        if (full) document.body.classList.add('fullScreen');
+        else document.body.classList.remove('fullScreen');
+    }
+
+
     return (
         <Layout>
             <Seo title={`${project.frontmatter.title} - Project`} />
-            {/* <div className="portfolio-gallery content-area__1and2 skeuMorphBg" initial="initial" animate="enter" exit="exit" variants={PageVariant} transition={PageTransition}>
-                <ReactImageGallery items={images} showPlayButton={false} lazyLoad={true} useBrowserFullscreen={false} showIndex={true} showThumbnails={showThumb} onErrorImageURL={ErrorImg} onScreenChange={screenModeChange} />
-            </div> */}
+            <div className={`${projectStyles.portfolioGallery} skeuMorphBg`} >
+                <ReactImageGallery items={images} showPlayButton={false} lazyLoad={true} useBrowserFullscreen={false} showIndex={true} showThumbnails={showThumb} onScreenChange={screenModeChange} />
+            </div>
             <main className={`${projectStyles.content} skeuMorphBg`} >
                 <h1>{project.title} </h1>
                 <aside className={projectStyles.info}>

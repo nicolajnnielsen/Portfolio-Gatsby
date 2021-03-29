@@ -1,4 +1,4 @@
-@import '../styles/settings.scss';
+@use '../styles/settings.scss' as *;
 
 .image {
     max-width: 100%;
@@ -20,6 +20,21 @@
         }
         .svg {
             transform: translateY(-100px);
+        }
+    }
+
+    &:focus-within {
+        box-shadow: $ring;
+
+        .content {
+            color: $primary-blue;
+            border-color: inherit;
+        }
+        .title {
+            color: $primary-blue;
+        }
+        .arrow {
+            box-shadow: none;
         }
     }
 }
