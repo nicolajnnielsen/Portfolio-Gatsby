@@ -1,7 +1,7 @@
 @import '../styles/settings.scss';
 
 .container {
-    grid-column: content-1 / content-2;
+    grid-area: c1 / c3;
 }
 
 .form {

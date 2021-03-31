@@ -5,7 +5,7 @@
 }
 
 .card {
-    flex: 1 1 280px;
+    flex: 1 0 280px;
     position: relative;
     background-color: #171717;
     border-radius: 10px;
@@ -113,7 +113,7 @@
 }
 
 .title {
-    font-size: 1.3rem;
+    font-size: 1.75rem;
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1;
@@ -143,6 +143,22 @@
     page-break-after: always;
 }
 
+@media (max-width: 650px) {
+    .content {
+        align-content: center;
+        text-align: center;
+    }
+    .arrow {
+        display: none;
+    }
+}
+
+@media (min-width: 510px) {
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
 @keyframes ContentFadeIn {
     0% { transform: translateY(-1rem); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -152,10 +168,4 @@
     0% { transform: translate(-.5rem, -.5rem) scale(1.05); opacity: 0; filter: blur(2px); }
     50% { opacity: 1; filter: blur(2px); }
     100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
-}
-
-@media (min-width: 375px) {
-    .title {
-        font-size: 1.5rem;
-    }
 }

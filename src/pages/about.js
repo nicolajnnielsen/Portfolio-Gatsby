@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Layout from '../components/layout';
 import Seo from '../components/seo';
 import Skill from '../components/skills';
 
@@ -32,13 +31,13 @@ const About = () => {
     }
 
     return (
-        <Layout>
+        <>
             <Seo title="About" />
             <main className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
-                    <h1 className={aboutStyles.objectHeader}>frontend-developer: {"{"}</h1>
+                    <h1 className={aboutStyles.objectHeader}>developer: {"{"}</h1>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>name:</span> <span className={aboutStyles.objectValue}>'Nicolaj N. Nielsen'</span>,</p>
-                    <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>age:</span> <span className={aboutStyles.objectValue}>29</span>,</p>
+                    <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>age:</span> <span className={aboutStyles.objectValue}>30</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>education:</span> <span className={aboutStyles.objectValue}>'Multimedia Design and Communication - University College Nordjylland'</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>lastJob:</span> <span className={aboutStyles.objectValue}>'Front-End Devloper, MXAgency'</span>,</p>
                     <p className={`${aboutStyles.indent} ${aboutStyles.last}`}><span className={aboutStyles.objectKey}>interests:</span> [<span className={aboutStyles.objectValue}>'Video Game', 'Music', 'Podcasting',</span>],</p>
@@ -71,7 +70,7 @@ const About = () => {
                     My strengths in that regard are around making highly user-friendly solutions. Since graduating I have put a greater emphasis on the more programming heavy aspects of development, and have specifically focused on improving my JavaScript skills.
 					</p>
             </article>
-        </Layout>
+        </>
     )
 }
 

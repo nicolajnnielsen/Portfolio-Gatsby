@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactImageGallery from 'react-image-gallery';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -21,7 +21,7 @@ export const query = graphql`
                             fixed(width: 95) {
                                 src
                             }
-                            fluid(maxWidth: 1500) {
+                            fluid(maxHeight: 750, quality: 100) {
                                 srcSet
                                 sizes
                                 originalImg
@@ -59,15 +59,20 @@ const Project = ({ data }) => {
         else document.body.classList.remove('fullScreen');
     }
 
-
+    useEffect(() => {
+        return () => {
+            document.body.classList.remove("fullScreen");
+        }
+    }, [])
+    
     return (
-        <Layout>
+        <>
             <Seo title={`${project.frontmatter.title} - Project`} />
             <div className={`${projectStyles.portfolioGallery} skeuMorphBg`} >
                 <ReactImageGallery items={images} showPlayButton={false} lazyLoad={true} useBrowserFullscreen={false} showIndex={true} showThumbnails={showThumb} onScreenChange={screenModeChange} />
             </div>
             <main className={`${projectStyles.content} skeuMorphBg`} >
-                <h1>{project.title} </h1>
+                <h1>{project.frontmatter.title} </h1>
                 <aside className={projectStyles.info}>
                     <div>
                         <h3>Built with:</h3>
@@ -80,9 +85,9 @@ const Project = ({ data }) => {
                         {project.frontmatter.gitLink && <a href={project.frontmatter.gitLink}>View Code</a>}
                     </div>
                 </aside>
-                <div className={projectStyles.text} dangerouslySetInnerHTML={{__html: project.html}} ></div>
+                <article className={projectStyles.text} dangerouslySetInnerHTML={{__html: project.html}} ></article>
             </main>
-        </Layout>
+        </>
     )
 }
 

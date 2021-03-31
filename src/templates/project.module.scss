@@ -9,9 +9,9 @@
 	}
 }
 
-
 .portfolio-gallery {
-	grid-column: content-1 / content-2;
+	grid-column: c1 / c2;
+	grid-row: c1;
 	
 	// max-height: 400px;
 	div {
@@ -24,7 +24,7 @@
 }
 
 .content {
-	grid-row: content-2 / content-3;
+	grid-area: c2;
 	display: flex;
 	flex-direction: column;
 }
@@ -76,7 +76,7 @@
 
 @media (min-width: 791px) {
 	.content {
-		grid-area: content-3;
+		grid-area: c3;
 		flex-direction: row;
 		flex-wrap: wrap;
 		// max-width: 1000px;

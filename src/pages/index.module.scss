@@ -11,7 +11,7 @@
 
 .frontpage-intro {
 	box-shadow: none;
-	grid-area: content-1;
+	grid-column: c1 / c2;
 
 	h1 {
 		color: #DD0048;
@@ -69,7 +69,7 @@
 
 @media (min-width: 791px) {
 	.frontpage-intro {
-		grid-area: content-1 / content-1 / content-2 / content-2;
+		grid-column: c1 / c2;
 
 		h1 {
 			font-size: 2.75rem;
@@ -121,8 +121,7 @@
 }
 
 .portfolio.frontpage-portfolio {
-	grid-row: content-2 / content-3;
-	grid-column: content-1 / content-2;
+	grid-area: c3;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.5rem 1rem;
@@ -175,6 +174,6 @@
 
 @media (min-width: 791px) {
 	.portfolio.frontpage-portfolio {
-		grid-area: content-3;
+		grid-area: c3;
 	}
 }

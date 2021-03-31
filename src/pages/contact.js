@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Layout from '../components/layout'
 import Seo from '../components/seo';
 
 import contactStyles from './contact.module.scss';
@@ -121,7 +120,7 @@ const Contact = () => {
         setMsgState({ value: "", error: null, focused: false, valid: null });
     }
     return (
-        <Layout>
+        <>
             <Seo title="Contact" />
             <main className={`${contactStyles.container} skeuMorphBg`} >
                 <form name="contact" onSubmit={handleSubmit} className={contactStyles.form}>
@@ -160,7 +159,7 @@ const Contact = () => {
                     {/* {submitState.submitted && <SubmitMessage status={submitState.status} />} */}
                 </form>
             </main>
-        </Layout>
+        </>
     )
 }
 

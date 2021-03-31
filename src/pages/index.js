@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import Layout from "../components/layout";
 import ProjectCard from "../components/projectCard";
 import Seo from "../components/seo";
 
@@ -14,6 +13,7 @@ const IndexPage = () => {
                     node {
                         frontmatter {
                             title
+                            shortTitle
                             description
                             coverImage {
                                 childImageSharp {
@@ -32,7 +32,7 @@ const IndexPage = () => {
         }
     `);
   return (
-    <Layout>
+    <>
       <Seo title="Welcome" />
       <main className={indexStyles.frontpageIntro} >
         <h1>Nicolaj N. Nielsen</h1>
@@ -41,13 +41,13 @@ const IndexPage = () => {
       </main>
       <section aria-labelledby="header-projectHighlights" className={`${indexStyles.portfolio} ${indexStyles.frontpagePortfolio} skeuMorphBg`} >
         <h2 id="header-projectHighlights" className={indexStyles.header}>Project Highlights</h2>
-        {data.allMarkdownRemark.edges.map((({ node: { frontmatter: { title, coverImage: img, description }, fields: { slug } } }, index) => {
+        {data.allMarkdownRemark.edges.map((({ node: { frontmatter: { title, shortTitle, coverImage: img, description }, fields: { slug } } }, index) => {
           return (
-            <ProjectCard key={index} title={title} img={img} description={description} slug={slug} frontpage={true} />
+            <ProjectCard key={index} title={shortTitle ? shortTitle : title} img={img} description={description} slug={slug} frontpage={true} />
           )
         }))}
       </section>
-    </Layout>
+    </>
   )
 }
 

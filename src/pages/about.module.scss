@@ -5,7 +5,7 @@
 }
 
 .about-info {
-    grid-area: content-1;
+    grid-area: c1;
 }
 
 .about-info__object {
@@ -69,13 +69,13 @@
 }
 
 .about-text {
-	grid-area: content-3;
+	grid-area: c3;
 	columns: 2 35ch;
 	column-gap: 1rem;
 }
 
 .skills {
-	grid-area: content-2;
+	grid-area: c2;
 	position: relative;
 	padding: 0;
 	display: grid;
