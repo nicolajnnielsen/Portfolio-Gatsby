@@ -34,7 +34,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Welcome" />
-      <main className={indexStyles.frontpageIntro} >
+      <main id="content" tabindex="-1" className={indexStyles.frontpageIntro} >
         <h1>Nicolaj N. Nielsen</h1>
         <h2>Frontend Developer...</h2>
         <h3>...With a <span className={indexStyles.highlight} >hunger for learning</span>, a focus on using <span className={indexStyles.highlight}>straightforward code</span> to build <span className="highlight">user friendly and intuitive</span> interfaces. </h3>

@@ -61,7 +61,7 @@ const Projects = ({data}) => {
     return (
         <Layout>
             <Seo title="Projects" />
-            <main className={`${projectsStyles.portfolio}`}>
+            <main id="content" tabindex="-1" className={`${projectsStyles.portfolio}`}>
                 {data.allMarkdownRemark.edges.map(({ node: { frontmatter: { title, coverImage: img, description }, fields: { slug } } }, index) => {
                     return (
                         <ProjectCard key={index} title={title} img={img} description={description} slug={slug} frontpage={false} />

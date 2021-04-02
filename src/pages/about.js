@@ -34,7 +34,7 @@ const About = () => {
     return (
         <Layout>
             <Seo title="About" />
-            <main className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
+            <main id="content" tabindex="-1" className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
                     <h1 className={aboutStyles.objectHeader}>frontend-developer: {"{"}</h1>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>name:</span> <span className={aboutStyles.objectValue}>'Nicolaj N. Nielsen'</span>,</p>
