@@ -1,11 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
+import { useEffect } from "react";
 import ProjectCard from "../components/projectCard";
 import Seo from "../components/seo";
 
 import indexStyles from "./index.module.scss";
 
-const IndexPage = () => {
+const IndexPage = ({transitionStatus}) => {
   const data = useStaticQuery(graphql`
         query {
             allMarkdownRemark (filter: {frontmatter: {hightlight: {eq: true}}}, limit: 3) {
@@ -31,6 +32,16 @@ const IndexPage = () => {
             }
         }
     `);
+  useEffect(() => {
+    const body = document.body;
+    if (transitionStatus === 'entering') {
+      body.classList.add('noScroll');
+      setTimeout(() => {
+        body.classList.remove('noScroll');
+      }, 700);
+    }
+  }, transitionStatus);
+  
   return (
     <>
       <Seo title="Welcome" />

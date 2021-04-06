@@ -9,7 +9,8 @@ code {
 
 .tl-edges {
 	grid-area: c;
-	overflow: hidden;
+	overflow-x: visible;
+	// overflow: hidden;
 }
 
 .tl-wrapper {
@@ -126,5 +127,13 @@ body.fullScreen {
 	.image-gallery-slide-wrapper:focus-within .image-gallery-index,
 	.image-gallery-slide-wrapper:focus-within .image-gallery-description {
 		opacity: 1;
+	}
+}
+
+
+
+@media (min-width: 791px) {
+	body.noScroll {
+		overflow-y: hidden;
 	}
 }

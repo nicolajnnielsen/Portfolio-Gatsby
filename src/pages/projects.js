@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProjectCard from '../components/projectCard';
 import Seo from '../components/seo';
 
@@ -31,7 +31,7 @@ export const query = graphql`
         }
     `
 
-const Projects = ({data}) => {
+const Projects = ({data, transitionStatus}) => {
     // console.log(data);
     // const data = useStaticQuery(graphql`
     //     query {
@@ -57,6 +57,16 @@ const Projects = ({data}) => {
     //         }
     //     }
     // `)
+
+    useEffect(() => {
+        const body = document.body;
+        if (transitionStatus === 'entering') {
+            body.classList.add('noScroll');
+            setTimeout(() => {
+                body.classList.remove('noScroll');
+            }, 700);
+        }
+    }, transitionStatus);
 
     return (
         <>

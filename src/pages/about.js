@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Seo from '../components/seo';
 import Skill from '../components/skills';
 
 import aboutStyles from './about.module.scss';
 
-const About = () => {
+const About = ({transitionStatus}) => {
     const [skills, setSkills] = useState({
         html: { id: 'html', title: 'HTML5', text: 'Strong HTML skills with a large focus on clean and semantic markup to avoid confusing structure. I am also trying to put a greater emphasis on accessibility.', active: false },
         css: { id: 'css', title: 'CSS3', text: 'Strong, well-rounded skills and knowledge of the various properties. It’s been a goal to learn the newest layout properties like Grid and Flexbox, as a result I work well with them, and know how to implement fallback for Grid where not supported. Additionally I am familiar with a few frameworks and how to work in that way. Experienced with SCSS, and familiar with BEM and CSS Modules', active: false },
@@ -17,6 +17,22 @@ const About = () => {
         magento: { id: 'magento', title: 'Magento', text: 'Worked with it for a year, primarily Magento 1, but also some M2. Mostly front-end work, building new pages, editing templates and layout, as well as maintenance in the admin area.', active: false },
         // gatsby: {id: 'gatsby', title: 'Gatsby', text: 'I know nothing', active: false},
     });
+
+    useEffect(() => {
+        const body = document.body;
+        if (transitionStatus === 'entering') {
+            body.classList.add('noScroll');
+            setTimeout(() => {
+                body.classList.remove('noScroll');
+            }, 700);
+        }
+        // if (transitionStatus === 'entered') {
+        //     body.classList.remove('noScroll');
+        // }
+        return () => {
+            // body.classList.remove('noScroll');
+        }
+    }, transitionStatus)
 
     const toggleActive = (id) => {
         setSkills((prevState) => {

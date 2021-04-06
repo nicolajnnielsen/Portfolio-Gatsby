@@ -135,4 +135,25 @@
 	}
 }
 
+.backLink {
+	grid-row: span 2;
+	position: relative;
+	padding: 1em;
+	a {
+		position: sticky;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 3rem;
+		fill: $primary-red;
+		color: $primary-red;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.2rem;
+		transition: 200ms;
 
+		&:hover {
+			fill: $primary-blue;
+		}
+	}
+} 

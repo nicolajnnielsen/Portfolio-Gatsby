@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { useState, useEffect } from 'react';
 import ReactImageGallery from 'react-image-gallery';
-import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 import projectStyles from './project.module.scss';
@@ -40,7 +40,6 @@ export const query = graphql`
 const Project = ({ data }) => {
     const [showThumb, setShowThumb] = useState(true);
     const project = data.markdownRemark;
-    console.log(project);
     const images = project.frontmatter.images.map((image, i) => {
         return {
             original: image.img.childImageSharp.fluid.originalImg,
@@ -68,6 +67,7 @@ const Project = ({ data }) => {
     return (
         <>
             <Seo title={`${project.frontmatter.title} - Project`} />
+            <nav className={projectStyles.backLink}><AniLink cover direction="up" bg="#171717" to="/projects" title="Back to projects"><svg focusable="false" aria-label="Back to projects" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M21 11L6.414 11 11.707 5.707 10.293 4.293 2.586 12 10.293 19.707 11.707 18.293 6.414 13 21 13z"></path></svg></AniLink> </nav>
             <div className={`${projectStyles.portfolioGallery} skeuMorphBg`} >
                 <ReactImageGallery items={images} showPlayButton={false} lazyLoad={true} useBrowserFullscreen={false} showIndex={true} showThumbnails={showThumb} onScreenChange={screenModeChange} />
             </div>
@@ -77,8 +77,8 @@ const Project = ({ data }) => {
                     <div>
                         <h3>Built with:</h3>
                         <ul className={projectStyles.info__list}>
-                            {project.frontmatter.skills.map((skill) => (
-                                <li>{skill}</li>
+                            {project.frontmatter.skills.map((skill, i) => (
+                                <li key={i}>{skill}</li>
                             ))}
                         </ul>
                         {project.frontmatter.link && <a href={project.frontmatter.link}>View Demo</a>}
