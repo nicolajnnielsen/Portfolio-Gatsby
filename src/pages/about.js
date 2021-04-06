@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import Layout from '../components/layout';
+import React, { useEffect, useState } from 'react'
 import Seo from '../components/seo';
 import Skill from '../components/skills';
 
 import aboutStyles from './about.module.scss';
 
-const About = () => {
+const About = ({transitionStatus}) => {
     const [skills, setSkills] = useState({
         html: { id: 'html', title: 'HTML5', text: 'Strong HTML skills with a large focus on clean and semantic markup to avoid confusing structure. I am also trying to put a greater emphasis on accessibility.', active: false },
         css: { id: 'css', title: 'CSS3', text: 'Strong, well-rounded skills and knowledge of the various properties. It’s been a goal to learn the newest layout properties like Grid and Flexbox, as a result I work well with them, and know how to implement fallback for Grid where not supported. Additionally I am familiar with a few frameworks and how to work in that way. Experienced with SCSS, and familiar with BEM and CSS Modules', active: false },
@@ -18,6 +17,22 @@ const About = () => {
         magento: { id: 'magento', title: 'Magento', text: 'Worked with it for a year, primarily Magento 1, but also some M2. Mostly front-end work, building new pages, editing templates and layout, as well as maintenance in the admin area.', active: false },
         // gatsby: {id: 'gatsby', title: 'Gatsby', text: 'I know nothing', active: false},
     });
+
+    useEffect(() => {
+        const body = document.body;
+        if (transitionStatus === 'entering') {
+            body.classList.add('noScroll');
+            setTimeout(() => {
+                body.classList.remove('noScroll');
+            }, 700);
+        }
+        // if (transitionStatus === 'entered') {
+        //     body.classList.remove('noScroll');
+        // }
+        return () => {
+            // body.classList.remove('noScroll');
+        }
+    }, transitionStatus)
 
     const toggleActive = (id) => {
         setSkills((prevState) => {
@@ -32,13 +47,13 @@ const About = () => {
     }
 
     return (
-        <Layout>
+        <>
             <Seo title="About" />
             <main id="content" tabindex="-1" className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
-                    <h1 className={aboutStyles.objectHeader}>frontend-developer: {"{"}</h1>
+                    <h1 className={aboutStyles.objectHeader}>developer: {"{"}</h1>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>name:</span> <span className={aboutStyles.objectValue}>'Nicolaj N. Nielsen'</span>,</p>
-                    <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>age:</span> <span className={aboutStyles.objectValue}>29</span>,</p>
+                    <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>age:</span> <span className={aboutStyles.objectValue}>30</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>education:</span> <span className={aboutStyles.objectValue}>'Multimedia Design and Communication - University College Nordjylland'</span>,</p>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>lastJob:</span> <span className={aboutStyles.objectValue}>'Front-End Devloper, MXAgency'</span>,</p>
                     <p className={`${aboutStyles.indent} ${aboutStyles.last}`}><span className={aboutStyles.objectKey}>interests:</span> [<span className={aboutStyles.objectValue}>'Video Game', 'Music', 'Podcasting',</span>],</p>
@@ -71,7 +86,7 @@ const About = () => {
                     My strengths in that regard are around making highly user-friendly solutions. Since graduating I have put a greater emphasis on the more programming heavy aspects of development, and have specifically focused on improving my JavaScript skills.
 					</p>
             </article>
-        </Layout>
+        </>
     )
 }
 

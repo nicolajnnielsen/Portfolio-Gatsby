@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Layout from '../components/layout'
 import Seo from '../components/seo';
 
 import contactStyles from './contact.module.scss';
 
-const Contact = () => {
+const Contact = ({transitionStatus}) => {
     const firstRender = useRef(true);
 
     const [btnDisabled, setBtnDisabled] = useState(true);
@@ -12,6 +11,16 @@ const Contact = () => {
     const [nameState, setNameState] = useState({ value: "", error: null, focused: false, valid: null });
     const [msgState, setMsgState] = useState({ value: "", error: null, focused: false, valid: null });
     const [submitState, setSubmitState] = useState({ submitted: false, status: null });
+
+    useEffect(() => {
+        const body = document.body;
+        if (transitionStatus === 'entering') {
+            body.classList.add('noScroll');
+            setTimeout(() => {
+                body.classList.remove('noScroll');
+            }, 700);
+        }
+    }, transitionStatus);
 
     const setFocusFlag = (e) => {
         const targetInput = e.target.id;
@@ -121,7 +130,7 @@ const Contact = () => {
         setMsgState({ value: "", error: null, focused: false, valid: null });
     }
     return (
-        <Layout>
+        <>
             <Seo title="Contact" />
             <main id="content" tabindex="-1" className={`${contactStyles.container} skeuMorphBg`} >
                 <form name="contact" onSubmit={handleSubmit} className={contactStyles.form}>
@@ -153,14 +162,14 @@ const Contact = () => {
                             value={msgState.value}
                             onBlur={setFocusFlag}
                             onChange={handleChange}>
-                            ></textarea>
+                        </textarea>
                         <span className="form-msg">{msgState.focused && msgState.error ? msgState.error : String.fromCharCode(160)}</span>
                     </div>
                     <button className="btn form__submit" disabled={btnDisabled} type="submit">Send</button>
                     {/* {submitState.submitted && <SubmitMessage status={submitState.status} />} */}
                 </form>
             </main>
-        </Layout>
+        </>
     )
 }
 

@@ -1,6 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby';
+import React, { useEffect } from 'react'
 import ProjectCard from '../components/projectCard';
 import Seo from '../components/seo';
 
@@ -13,10 +12,11 @@ export const query = graphql`
                     node {
                         frontmatter {
                             title
+                            shortTitle
                             description
                             coverImage {
                                 childImageSharp {
-                                    fluid(maxWidth: 450) {
+                                    fluid(maxWidth: 900) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -31,8 +31,8 @@ export const query = graphql`
         }
     `
 
-const Projects = ({data}) => {
-    console.log(data);
+const Projects = ({data, transitionStatus}) => {
+    // console.log(data);
     // const data = useStaticQuery(graphql`
     //     query {
     //         allMarkdownRemark {
@@ -58,17 +58,27 @@ const Projects = ({data}) => {
     //     }
     // `)
 
+    useEffect(() => {
+        const body = document.body;
+        if (transitionStatus === 'entering') {
+            body.classList.add('noScroll');
+            setTimeout(() => {
+                body.classList.remove('noScroll');
+            }, 700);
+        }
+    }, transitionStatus);
+
     return (
-        <Layout>
+        <>
             <Seo title="Projects" />
             <main id="content" tabindex="-1" className={`${projectsStyles.portfolio}`}>
-                {data.allMarkdownRemark.edges.map(({ node: { frontmatter: { title, coverImage: img, description }, fields: { slug } } }, index) => {
+                {data.allMarkdownRemark.edges.map(({ node: { frontmatter: { title, shortTitle, coverImage: img, description }, fields: { slug } } }, index) => {
                     return (
-                        <ProjectCard key={index} title={title} img={img} description={description} slug={slug} frontpage={false} />
+                        <ProjectCard key={index} title={shortTitle ? shortTitle : title} img={img} description={description} slug={slug} frontpage={false} />
                     )
                 }) }
             </main>
-        </Layout>
+        </>
     )
 }
 

@@ -1,5 +1,6 @@
 ---
-title: IgglesBlitz
+title: IgglesBlitz WordPress Theme
+shortTitle: IgglesBlitz
 coverImage: IB_Home_Desktop.png
 skills: 
     - SCSS
@@ -44,6 +45,6 @@ images: [
 
 ---
 
-# IgglesBlitz WordPress Theme
+<!-- # IgglesBlitz WordPress Theme -->
 
 A WordPress theme using the Underscores starter, for a Philadelphia Eagles focused blog I\'ve been reading for many years.

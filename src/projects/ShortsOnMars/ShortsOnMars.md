@@ -1,5 +1,6 @@
 ---
 title: Shorts On Mars
+shortTitle: Shorts On Mars
 coverImage: shortsonmars-mobile.png
 skills: 
     - JS
@@ -34,7 +35,7 @@ images: [
 ]
 ---
 
-# Short On Mars
+<!-- # Short On Mars -->
 
 Shorts On Mars is a weather app displaying the weather conditions on Mars from the past 7 days. It’s using an API provided by NASA as part of their InSight Mission. The app is built using React, hooks and no third party libraries.
 
