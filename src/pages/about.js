@@ -5,18 +5,18 @@ import Skill from '../components/skills';
 import aboutStyles from './about.module.scss';
 
 const About = ({transitionStatus}) => {
-    const [skills, setSkills] = useState({
-        html: { id: 'html', title: 'HTML5', text: 'Strong HTML skills with a large focus on clean and semantic markup to avoid confusing structure. I am also trying to put a greater emphasis on accessibility.', active: false },
-        css: { id: 'css', title: 'CSS3', text: 'Strong, well-rounded skills and knowledge of the various properties. It’s been a goal to learn the newest layout properties like Grid and Flexbox, as a result I work well with them, and know how to implement fallback for Grid where not supported. Additionally I am familiar with a few frameworks and how to work in that way. Experienced with SCSS, and familiar with BEM and CSS Modules', active: false },
-        js: { id: 'js', title: 'JavaScript', text: 'I have good working knowledge, enabling me to work effectively with creating more interactivity on sites. I have been focusing more on my JS programming skills lately, and honing my knowledge of various ES6 methods.', active: false },
-        react: { id: 'react', title: 'React', text: 'I haven’t been using React for very long, but have a good understanding of the fundamentals, working with JSX and both functional- and class components. Building interactable interfaces using state, though I still need to get better at working with more complex state objects, and using tools like Redux or Context API.', active: false },
-        wordpress: { id: 'wordpress', title: 'WordPres', text: 'I have a good understanding of working with WordPres, its file structure and admin tools. I have basic experience with theme development, where I have developed a couple of themes using Underscores.', active: false },
-        php: { id: 'php', title: 'PHP', text: 'Most of my PHP experience has been for templating in conjunction with Magento and WordPress. Though I also have a little experience troubleshooting and programming in a more back-end oriented context. ', active: false },
-        sql: { id: 'sql', title: 'T-SQL / mySql', text: 'I know basic querying, and how to accomplish tasks with both queries and GUI\'s like phpmyadmin. Additionally I have basic knowledge of designing simple relational databases.', active: false },
-        // strapi: {id: 'strapi', title: 'Strapi', text: 'New but learning, it\' very cool', active: false},
-        magento: { id: 'magento', title: 'Magento', text: 'Worked with it for a year, primarily Magento 1, but also some M2. Mostly front-end work, building new pages, editing templates and layout, as well as maintenance in the admin area.', active: false },
-        // gatsby: {id: 'gatsby', title: 'Gatsby', text: 'I know nothing', active: false},
-    });
+    const [skills, setSkills] = useState([
+        { id: 'html', title: 'HTML5', text: 'Strong HTML skills with a large focus on clean and semantic markup to avoid confusing structure. I am also trying to put a greater emphasis on accessibility.', active: false },
+        { id: 'css', title: 'CSS3', text: 'Strong, well-rounded skills and knowledge of the various properties. It’s been a goal to learn the newest layout properties like Grid and Flexbox, as a result I work well with them, and know how to implement fallback for Grid where not supported. Additionally I am familiar with a few frameworks and how to work in that way. Experienced with SCSS, and familiar with BEM and CSS Modules', active: false },
+        { id: 'js', title: 'JavaScript', text: 'I have good working knowledge, enabling me to work effectively with creating more interactivity on sites. I have been focusing more on my JS programming skills lately, and honing my knowledge of various ES6 methods.', active: false },
+        { id: 'react', title: 'React', text: 'I haven’t been using React for very long, but have a good understanding of the fundamentals, working with JSX and both functional- and class components. Building interactable interfaces using state, though I still need to get better at working with more complex state objects, and using tools like Redux or Context API.', active: false },
+        { id: 'wordpress', title: 'WordPres', text: 'I have a good understanding of working with WordPres, its file structure and admin tools. I have basic experience with theme development, where I have developed a couple of themes using Underscores.', active: false },
+        { id: 'php', title: 'PHP', text: 'Most of my PHP experience has been for templating in conjunction with Magento and WordPress. Though I also have a little experience troubleshooting and programming in a more back-end oriented context. ', active: false },
+        { id: 'sql', title: 'T-SQL / mySql', text: 'I know basic querying, and how to accomplish tasks with both queries and GUI\'s like phpmyadmin. Additionally I have basic knowledge of designing simple relational databases.', active: false },
+        // { id: 'strapi', title: 'Strapi', text: 'New but learning, it\' very cool', active: false },
+        { id: 'magento', title: 'Magento', text: 'Worked with it for a year, primarily Magento 1, but also some M2. Mostly front-end work, building new pages, editing templates and layout, as well as maintenance in the admin area.', active: false },
+        { id: 'gatsby', title: 'Gatsby', text: 'I know nothing', active: false },
+    ]);
 
     useEffect(() => {
         const body = document.body;
@@ -32,24 +32,28 @@ const About = ({transitionStatus}) => {
         return () => {
             // body.classList.remove('noScroll');
         }
-    }, transitionStatus)
+    }, [transitionStatus])
 
     const toggleActive = (id) => {
         setSkills((prevState) => {
-            return {
-                ...prevState,
-                [id]: {
-                    ...prevState[id],
-                    active: !prevState[id].active
-                }
-            }
+            return (
+                prevState.map((skill) => {
+                    if (skill.active && skill.id !== id) {
+                        return{...skill, active: false}
+                    } else if (skill.id === id) {
+                        return {...skill, active: !skill.active}
+                    } else {
+                        return skill;
+                    }
+                })
+            )
         })
     }
 
     return (
         <>
             <Seo title="About" />
-            <main id="content" tabindex="-1" className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
+            <main id="content" tabIndex="-1" className={`${aboutStyles.aboutInfo} skeuMorphBg`}>
                 <div className={aboutStyles.aboutInfo__object}>
                     <h1 className={aboutStyles.objectHeader}>developer: {"{"}</h1>
                     <p className={aboutStyles.indent}><span className={aboutStyles.objectKey}>name:</span> <span className={aboutStyles.objectValue}>'Nicolaj N. Nielsen'</span>,</p>
@@ -61,8 +65,8 @@ const About = ({transitionStatus}) => {
                 </div>
             </main>
             <section aria-label="My skills" className={`${aboutStyles.skills} skeuMorphBg`}>
-                {Object.entries(skills).map(([key, value]) => (
-                    <Skill key={key} id={value.id} title={value.title} text={value.text} active={value.active} toggleActive={toggleActive} />
+                {skills.map((skill, i) => (
+                    <Skill key={i} id={skill.id} title={skill.title} text={skill.text} active={skill.active} toggleActive={toggleActive} />
                 ))}
             </section>
             <article className={`${aboutStyles.aboutText} skeuMorphBg`}>

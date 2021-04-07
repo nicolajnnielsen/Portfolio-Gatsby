@@ -1,6 +1,7 @@
 ---
 title: Portfolio
 coverImage: Portfolio_Projects_Mobile.png
+order: 8
 skills: 
     - JS
     - React

@@ -1,6 +1,7 @@
 ---
 title: IgglesBlitz WordPress Theme
 shortTitle: IgglesBlitz
+order: 3
 coverImage: IB_Home_Desktop.png
 skills: 
     - SCSS

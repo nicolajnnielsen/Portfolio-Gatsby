@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
 import headerStyles from "./header.module.scss";
 import Logo from '../images/svg/logo.svg';
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link';
-import { useLocation, useParams } from "@reach/router"
+import { useLocation } from "@reach/router"
 
 
 const Header = () => {

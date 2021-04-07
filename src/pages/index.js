@@ -9,7 +9,7 @@ import indexStyles from "./index.module.scss";
 const IndexPage = ({transitionStatus}) => {
   const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark (filter: {frontmatter: {hightlight: {eq: true}}}, limit: 3) {
+            allMarkdownRemark (sort: {order: ASC, fields: frontmatter___order}, filter: {frontmatter: {hightlight: {eq: true}}}, limit: 3) {
                 edges {
                     node {
                         frontmatter {
@@ -40,12 +40,12 @@ const IndexPage = ({transitionStatus}) => {
         body.classList.remove('noScroll');
       }, 700);
     }
-  }, transitionStatus);
+  }, [transitionStatus]);
   
   return (
     <>
       <Seo title="Welcome" />
-      <main id="content" tabindex="-1" className={indexStyles.frontpageIntro} >
+      <main id="content" tabIndex="-1" className={indexStyles.frontpageIntro} >
         <h1>Nicolaj N. Nielsen</h1>
         <h2>Frontend Developer...</h2>
         <h3>...With a <span className={indexStyles.highlight} >hunger for learning</span>, a focus on using <span className={indexStyles.highlight}>straightforward code</span> to build <span className="highlight">user friendly and intuitive</span> interfaces. </h3>

@@ -1,3 +1,5 @@
+@import '../styles/settings.scss';
+
 .contactLinks {
 	grid-area: a;
 	display: flex;
@@ -5,8 +7,8 @@
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(218, 218, 218, 0.05), inset 2px 2px 2px rgba(218, 218, 218, 0.05), inset -2px -2px 2px rgba(0, 0, 0, 0.3);
 	border-radius: 15px;
 	padding: 5px;
+	margin: 0 2em;
 	justify-content: space-evenly;
-	z-index: 30;
 	background: #171717;
 
 	a {
@@ -14,6 +16,12 @@
 		justify-content: center;
 		flex: 0 1 60px;
 		height: 100%;
+		border-radius: 8px;
+
+		&:focus {
+				outline: none;
+				box-shadow: $ring;
+			}
 
 		svg {
 			height: 100%;
@@ -21,11 +29,17 @@
 	}
 }
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
+	.contactLinks {
+		margin: 0 5em;
+	}
+}
+
+@media (min-width: 961px) {
 	.contactLinks {
 		flex-direction: column;
 		position: fixed;
-		right: 30px;
+		right: 20px;
 		top: 50%;
 		padding: 10px;
 		transform: translateY(-50%);
@@ -33,6 +47,8 @@
 		box-shadow: 14px 14px 28px #0a0a0a, -14px -14px 28px #1a1a1a;
 		box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3), -5px -5px 3px rgba(218, 218, 218, 0.05);
 		border: 1px solid rgba(221, 0, 72, 0.2);
+		margin: 0;
+		z-index: 30;
 	
 		a {
 			max-width: 50px;
@@ -44,5 +60,10 @@
 			}
 		}
 	}
+}
 
+@media (min-width: 1200px) {
+	.contactLinks {
+		right: 30px;
+	}
 }

@@ -116,11 +116,11 @@
 		justify-content: space-evenly;
 		padding: 0;
 
-		> svg {
+		svg {
 			display: initial;
 		}
 
-		> a {
+		a {
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(218, 218, 218, 0.04);
 			padding: 0.4em 1em;
 			font-size: 1.5rem;
@@ -133,6 +133,13 @@
 				box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(218, 218, 218, 0.04);
 				border: 2px solid rgba(22, 180, 222, 0.2);
 				text-shadow: none;
+			}
+
+			&:focus {
+				outline: none;
+				--ring-offset: 5px;
+				--ring-size: 1px;
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(218, 218, 218, 0.04), $ring;
 			}
 		}
 	}
@@ -151,10 +158,10 @@
 	}
 }
 
-a:focus {
-	outline: 1px dotted currentColor;
-	outline-offset: 4px;
-}
+// a:focus {
+// 	outline: 1px dotted currentColor;
+// 	outline-offset: 4px;
+// }
 
 @media (min-width: 2000px) {
 	.site-header {

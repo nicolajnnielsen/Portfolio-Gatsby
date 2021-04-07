@@ -12,16 +12,19 @@ $l-size: 1.75rem;
 $xl-size: 2rem;
 $xxl-size: 2.25rem;
 
-
 $desktop-breakpoint: 45rem;
 
 // Ring
 :root {
+	--clr-red:#DD0048;
+	--clr-blue: #16B4DE;
 	--ring-offset: 2px;
 	--ring-size: 2px;
 	--focus-color: rgb(22, 180, 222);
+	--ring-bg: #171717;
 }
 
 $input-ring: inset -1px -1px 1px rgba(255, 255, 255, 0.1), inset 1px 1px 1px rgba(0, 0, 0, 0.8), 0 0 0 var(--ring-offset) #171717, 0 0 0 calc(var(--ring-size) + var(--ring-offset)) var(--focus-color);
-$ring: 0 0 0 var(--ring-offset) #171717, 0 0 0 calc(var(--ring-size) + var(--ring-offset)) var(--focus-color);
+$inset-ring: inset 0 0 0 var(--ring-offset) var(--ring-bg), inset 0 0 0 calc(var(--ring-size) + var(--ring-offset)) var(--focus-color);
+$ring: 0 0 0 var(--ring-offset) var(--ring-bg), 0 0 0 calc(var(--ring-size) + var(--ring-offset)) var(--focus-color);
 

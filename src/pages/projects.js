@@ -7,7 +7,7 @@ import projectsStyles from './projects.module.scss';
 
 export const query = graphql`
         query ProjectsPageQuery {
-            allMarkdownRemark {
+            allMarkdownRemark(sort: {order: ASC, fields: frontmatter___order}) {
                 edges {
                     node {
                         frontmatter {
@@ -66,12 +66,12 @@ const Projects = ({data, transitionStatus}) => {
                 body.classList.remove('noScroll');
             }, 700);
         }
-    }, transitionStatus);
+    }, [transitionStatus]);
 
     return (
         <>
             <Seo title="Projects" />
-            <main id="content" tabindex="-1" className={`${projectsStyles.portfolio}`}>
+            <main id="content" tabIndex="-1" className={`${projectsStyles.portfolio}`}>
                 {data.allMarkdownRemark.edges.map(({ node: { frontmatter: { title, shortTitle, coverImage: img, description }, fields: { slug } } }, index) => {
                     return (
                         <ProjectCard key={index} title={shortTitle ? shortTitle : title} img={img} description={description} slug={slug} frontpage={false} />

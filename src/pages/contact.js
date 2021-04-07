@@ -20,7 +20,7 @@ const Contact = ({transitionStatus}) => {
                 body.classList.remove('noScroll');
             }, 700);
         }
-    }, transitionStatus);
+    }, [transitionStatus]);
 
     const setFocusFlag = (e) => {
         const targetInput = e.target.id;
@@ -132,7 +132,7 @@ const Contact = ({transitionStatus}) => {
     return (
         <>
             <Seo title="Contact" />
-            <main id="content" tabindex="-1" className={`${contactStyles.container} skeuMorphBg`} >
+            <main id="content" tabIndex="-1" className={`${contactStyles.container} skeuMorphBg`} >
                 <form name="contact" onSubmit={handleSubmit} className={contactStyles.form}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div className={contactStyles.formGroup}>

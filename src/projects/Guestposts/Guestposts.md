@@ -1,6 +1,7 @@
 ---
 title: Guestposts.dk
 shortTitle: Guestposts.dk
+order: 2
 coverImage: Guestposts_Desktop.png
 skills: 
     - SCSS

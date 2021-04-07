@@ -24,7 +24,7 @@
     }
 
     &:focus-within {
-        box-shadow: $ring;
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3), -5px -5px 3px rgba(218, 218, 218, 0.05), $ring;
 
         .content {
             color: $primary-blue;

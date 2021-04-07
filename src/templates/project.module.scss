@@ -14,10 +14,9 @@
 	grid-row: c1;
 	
 	// max-height: 400px;
-	div {
-		// max-height: 400px;
-
-	}
+	// div {
+	// 	// max-height: 400px;
+	// }
 	img {
 		max-width: 100%;
 	}
@@ -34,9 +33,10 @@
 	flex-direction: column;
 	border-radius: 20px;
 	box-shadow: inset -5px -5px 10px rgba(218, 218, 218, 0.04), inset 5px 5px 10px rgba(0, 0, 0, 0.7);
-	padding: 1.5em;
+	padding: 1em 1.5em;
 	border: 2px solid lighten($color: #121212, $amount: 10%);
 	margin-bottom: 1em;
+	align-self: flex-start;
 
 	a {
 		margin-bottom: 0.25em;
@@ -152,8 +152,20 @@
 		font-size: 1.2rem;
 		transition: 200ms;
 
+		svg {
+			border-radius: 8px;
+			background-color: #171717;
+		}
+
 		&:hover {
 			fill: $primary-blue;
+		}
+
+		&:focus {
+			outline: none;
+			svg {
+				box-shadow: $ring;
+			}
 		}
 	}
 } 

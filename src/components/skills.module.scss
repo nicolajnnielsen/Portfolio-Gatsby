@@ -28,8 +28,18 @@
 		background-color: $primary-blue;
 	}
 
-	&:focus > span {
-		outline: 1px dotted white;
+	&:focus {
+		outline: none;
+		// outline: 1px dotted white;
+		background-color: $primary-blue;
+
+		span {
+			--ring-bg: var(--clr-blue);
+			--focus-color: var(--clr-red);
+			--ring-offset: 4px;
+			box-shadow: $ring;
+			border-radius: 5px;
+		}
 	}
 }
 
@@ -80,28 +90,28 @@
 }
 
 .skill {
-	@include skillPath(1, 2.9rem, 15%, 10%);
-	@include skillPath(2, 2.9rem, 85%, 90%);
-	@include skillPath(3, 2.9rem, 85%, 10%);
-	@include skillPath(4, 2.9rem, 15%, 90%);
-	@include skillPath(5, 2.9rem, 35%, 38%);
-	@include skillPath(6, 2.9rem, 65%, 65%);
-	@include skillPath(7, 2.9rem, 23%, 62%);
-	@include skillPath(8, 2.9rem, 80%, 42%);
-	@include skillPath(9, 2.9rem, 50%, 85%);
-	@include skillPath(10, 2.9rem, 50%, 15%);
+	@include skillPath(1, 2.8rem, 17%, 15%);
+	@include skillPath(2, 2.8rem, 83%, 85%);
+	@include skillPath(3, 2.8rem, 83%, 15%);
+	@include skillPath(4, 2.8rem, 17%, 85%);
+	@include skillPath(5, 2.8rem, 35%, 32%);
+	@include skillPath(6, 2.8rem, 65%, 65%);
+	@include skillPath(7, 2.8rem, 23%, 58%);
+	@include skillPath(8, 2.8rem, 76%, 43%);
+	@include skillPath(9, 2.8rem, 50%, 85%);
+	@include skillPath(10, 2.8rem, 50%, 15%);
 }		
 
 @media (min-width: 961px) {
 	.skill {
-		@include skillPath(1, 3.125rem, 12%, 14%);
-		@include skillPath(2, 3.125rem, 88%, 86%);
-		@include skillPath(3, 3.125rem, 88%, 14%);
-		@include skillPath(4, 3.125rem, 12%, 86%);
+		@include skillPath(1, 3.125rem, 12%, 17%);
+		@include skillPath(2, 3.125rem, 88%, 83%);
+		@include skillPath(3, 3.125rem, 88%, 17%);
+		@include skillPath(4, 3.125rem, 12%, 83%);
 		@include skillPath(5, 3.125rem, 35%, 25%);
 		@include skillPath(6, 3.125rem, 65%, 75%);
-		@include skillPath(7, 3.125rem, 17%, 54%);
-		@include skillPath(8, 3.125rem, 83%, 46%);
+		@include skillPath(7, 3.125rem, 19%, 52%);
+		@include skillPath(8, 3.125rem, 81%, 48%);
 		@include skillPath(9, 3.125rem, 40%, 65%);
 		@include skillPath(10, 3.125rem, 60%, 35%);
 	}
@@ -116,6 +126,11 @@
 	z-index: 10;
 	background-color: $primary-blue;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(22, 180, 222, 0.5), inset 2px 2px 5px rgba(22, 180, 222, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+	&:focus {
+		--focus-color: var(--clr-red);
+		--ring-bg: var(--clr-blue);
+		box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(22, 180, 222, 0.5), inset 2px 2px 5px rgba(22, 180, 222, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3), $inset-ring;
+	}
 	.skill__btn {
 		opacity: 0;
 	}

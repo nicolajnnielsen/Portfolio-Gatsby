@@ -1,6 +1,7 @@
 ---
 title: Shorts On Mars
 shortTitle: Shorts On Mars
+order: 1
 coverImage: shortsonmars-mobile.png
 skills: 
     - JS

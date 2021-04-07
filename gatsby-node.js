@@ -19,7 +19,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const projectTemplate = path.resolve('./src/templates/project.js');
     const res = await graphql(`
         query {
-            allMarkdownRemark {
+            allMarkdownRemark(
+                sort: {order: ASC, fields: [frontmatter___order]}
+            ) {
                 edges {
                     node {
                         fields {

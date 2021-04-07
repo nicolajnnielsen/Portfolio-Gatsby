@@ -3,7 +3,7 @@ import styles from './SkipNav.module.scss';
 
 const SkipNav = () => {
     return (
-        <a href="#content" className={styles.link} >Skip to main content</a>
+        <a id="skipNavLink" href="#content" className={styles.link} >Skip to main content</a>
     )
 }
 
