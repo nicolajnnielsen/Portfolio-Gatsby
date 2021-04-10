@@ -4,7 +4,8 @@ module.exports = {
     titleTemplate: "%s | Nicolaj N. Nielsen",
     description: "My personal web development portfolio.",
     author: "Nicolaj N. Nielsen",
-    url: "https://nicolajnielsen.dev"
+    url: "https://ninn-portfolio.netlify.app",
+    siteUrl: "https://ninn-portfolio.netlify.app"
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -22,7 +23,6 @@ module.exports = {
         background_color: '#171717',
         theme_color: '#171717',
         display: 'minimal-ui',
-
         icon: "src/images/logo.svg",
       },
     },
