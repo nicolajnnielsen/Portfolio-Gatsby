@@ -133,7 +133,7 @@ const Contact = ({transitionStatus}) => {
         <>
             <Seo title="Contact" />
             <main id="content" tabIndex="-1" className={`${contactStyles.container} skeuMorphBg`} >
-                <form name="contact" netlify onSubmit={handleSubmit} className={contactStyles.form}>
+                <form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className={contactStyles.form}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div className={contactStyles.formGroup}>
                         <label htmlFor="name">Name</label>
