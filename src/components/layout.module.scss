@@ -14,7 +14,6 @@
 	// ". content-3 ."
 	// ". aside .";
 	grid-template-areas: "h" "c" "a";
-	grid-gap: 1.5em 1em;
 	padding: 10px 0 70px;
 	transition: 200ms;
 
@@ -130,3 +129,17 @@
 // 		grid-area: content-1 / content-1 / content-2 / content-2;
 // 	}
 // }
+
+.link {
+    position: absolute;
+    z-index: 100;
+    padding: 0.75em;
+    background-color: #fff;
+    border-radius: 7px;
+    left: 0;
+    transform: translateY(-120%);
+
+    &:focus {
+        transform: translateY(0);
+    }
+}

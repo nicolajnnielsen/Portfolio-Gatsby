@@ -166,11 +166,19 @@ const Contact = ({transitionStatus}) => {
                         <span className="form-msg">{msgState.focused && msgState.error ? msgState.error : String.fromCharCode(160)}</span>
                     </div>
                     <button className="btn form__submit" disabled={btnDisabled} type="submit">Send</button>
-                    {/* {submitState.submitted && <SubmitMessage status={submitState.status} />} */}
+                    {submitState.submitted && <SubmitMessage status={submitState.status} />}
                 </form>
             </main>
         </>
     )
 }
+
+const SubmitMessage = ({ status }) => (
+    <p className="submit-msg">
+        {status === 'success' ?
+            <span className="submit-msg--success">Message succesfully sent. I will get back to you as soon as possible.</span> :
+            <span className="submit-msg--fail">Something went wrong trying to send the message, please try again. If the issue persists, please try again at a later point.</span>}
+    </p>
+)
 
 export default Contact

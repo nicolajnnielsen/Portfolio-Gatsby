@@ -10,11 +10,12 @@
 	display: grid;
 	// display: flex;
 	// flex-wrap: wrap;
-	gap: 1rem;
+	gap: 2rem 1rem;
 	grid-template-columns: 100%;
 	// box-shadow: none;
     align-content: flex-start;
 	grid-area: c1 / c3;
+	grid-row: c1 / c3;
 	grid-auto-rows: 300px;
 }
 

@@ -6,7 +6,7 @@ import cardStyles from './projectCard.module.scss';
 const ProjectCard = ({ title, img, description, slug, frontpage }) => {
     return (
         <article className={`${cardStyles.card} skeuMorphBg`} style={ frontpage ? {height: '400px'} : {} } >
-            <AniLink cover direction="down" bg="#171717" to={`/projects/${slug}`} className={cardStyles.wrapperLink}>
+            <AniLink cover direction="up" bg="#171717" duration={1.2} to={`/projects/${slug}`} className={cardStyles.wrapperLink}>
                 <Img fluid={img.childImageSharp.fluid} className={cardStyles.image} />
                 <div className={cardStyles.content}>
                     <h2 className={cardStyles.title}>{title}</h2>

@@ -14,7 +14,16 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        name: 'Nicolaj N. Nielsen Portfolio',
+        short_name: 'N.N. Portfolio',
+        description: 'Personal portfolio of Nicolaj N. Nielsen, front-end developer.',
+        lang: 'en',
+        start_url: '/',
+        background_color: '#171717',
+        theme_color: '#171717',
+        display: 'minimal-ui',
+
+        icon: "src/images/logo.svg",
       },
     },
     "gatsby-transformer-remark",

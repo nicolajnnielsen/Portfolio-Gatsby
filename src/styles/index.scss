@@ -10,6 +10,7 @@ code {
 .tl-edges {
 	grid-area: c;
 	overflow-x: visible;
+	overflow-y: hidden;
 	// overflow: hidden;
 }
 
@@ -20,6 +21,7 @@ code {
 	grid-template-rows: auto auto auto;
 	grid-template-areas: ". c1 ." ". c2 ." ". c3 .";
 	gap: 1.5em 0;
+	margin: 1.5rem 0;
 	background: #171717;
 }
 
