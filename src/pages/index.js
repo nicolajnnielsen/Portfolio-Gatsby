@@ -18,7 +18,7 @@ const IndexPage = ({transitionStatus}) => {
                             description
                             coverImage {
                                 childImageSharp {
-                                    fluid(maxWidth: 900) {
+                                    fluid(maxWidth: 900, quality: 30) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }

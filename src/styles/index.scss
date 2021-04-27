@@ -55,7 +55,7 @@ body.fullScreen {
 	overflow-y: hidden;
 
 	.tl-wrapper {
-		z-index: 30 !important;
+		z-index: 40 !important;
 	}
 }
 
@@ -90,6 +90,12 @@ body.fullScreen {
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
 	max-height: 500px;
+}
+
+@media (min-width: 1300px) {
+	.image-gallery-content .image-gallery-slide {
+		min-height: 500px;
+	}
 }
 
 .image-gallery-content.fullscreen .image-gallery-slide .image-gallery-image {

@@ -21,7 +21,7 @@ export const query = graphql`
                             fixed(width: 95) {
                                 src
                             }
-                            fluid(maxHeight: 750, quality: 100) {
+                            fluid(maxHeight: 750, quality: 60) {
                                 srcSet
                                 sizes
                                 originalImg
