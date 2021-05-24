@@ -1,9 +1,6 @@
-@import '../styles/settings.scss';
+@use '../styles/settings.scss' as *;
 
 .skill {
-	// display: flex;
-	// flex-direction: column;
-	// position: absolute;
 	padding: 1.5em;
 	grid-row: 1;
 	grid-column: 1;
@@ -15,10 +12,9 @@
 	background-color: $primary-red;
 	border-radius: 20px;
 	z-index: 1;
-	// padding-top: 80px;
 	cursor: pointer;
 	font-family: Evolve;
-	font-family: 'Exo 2';
+	font-family: "Exo 2";
 	font-family: Nasalization;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(221, 0, 72, 0.5), inset 2px 2px 5px rgba(221, 0, 72, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
 
@@ -30,7 +26,6 @@
 
 	&:focus {
 		outline: none;
-		// outline: 1px dotted white;
 		background-color: $primary-blue;
 
 		span {
@@ -138,6 +133,5 @@
 	.skill__text, .skill__title {
 		transition: 500ms;
 		opacity: 1;
-	}
-		
+	}	
 }

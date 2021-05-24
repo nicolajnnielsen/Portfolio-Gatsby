@@ -11,12 +11,10 @@ code {
 	grid-area: c;
 	overflow-x: visible;
 	overflow-y: hidden;
-	// overflow: hidden;
 }
 
 .tl-wrapper {
 	display: grid;
-	// grid-template-columns: 1fr 1fr;
 	grid-template-columns: 1em auto 1em;
 	grid-template-rows: auto auto auto;
 	grid-template-areas: ". c1 ." ". c2 ." ". c3 .";
@@ -33,7 +31,6 @@ code {
 
 @media (min-width: 900px) {
 	.tl-wrapper {
-		// grid-template-columns: 1fr 1fr;
 		grid-template-columns: 3em minmax(300px, 4fr) minmax(300px, 4fr) 3em;
 		grid-template-rows: auto auto auto;
 		grid-template-areas: ". c1 c2 ." ". c3 c3 .";
@@ -43,7 +40,6 @@ code {
 
 @media (min-width: 961px) {
 	.tl-wrapper {
-		// grid-template-columns: 1fr 1fr;
 		grid-template-columns: minmax(0, 1fr) minmax(300px, 4fr) minmax(300px, 4fr) minmax(0, 1fr);
 		grid-template-rows: auto auto;
 		grid-template-areas: ". c1 c2 ." ". c3 c3 .";
@@ -158,8 +154,6 @@ body.fullScreen {
 		opacity: 1;
 	}
 }
-
-
 
 @media (min-width: 791px) {
 	body.noScroll {

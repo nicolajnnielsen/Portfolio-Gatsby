@@ -1,4 +1,4 @@
-@import '../styles/settings.scss';
+@use '../styles/settings.scss' as *;
 
 .container {
     grid-area: c1 / c3;
@@ -7,7 +7,6 @@
 
 .form {
 	display: flex;
-	// flex-direction: column;
 	flex-wrap: wrap;
 }
 
@@ -27,7 +26,6 @@
 	}
 
 	input {
-		// flex: 1 1 150px;
 		height: 40px;
 	}
 

@@ -14,8 +14,6 @@
 	grid-column: c1 / c2;
 
 	h1 {
-		color: #DD0048;
-		/* color: #ff2975; */
 		color: #16B4DE;
 		font-size: 1.875rem;
 		margin: 0 0 0.25em;
@@ -27,7 +25,6 @@
 	h3 {
 		font-size: 1.125rem;
 		color: rgba(255,255,255,0.9);
-		// color: white;
 
 		.highlight {
 			color: #DD0048;
@@ -128,7 +125,6 @@
 
 	> h2 {
 		flex: 1 1 100%;
-		// margin-bottom: 1rem;
 	}
 
 	.portfolio-card {
@@ -150,12 +146,7 @@
 
 @media (min-width: 991px) {
 	.portfolio.frontpage-portfolio {
-		// display: grid;
 		grid-row: content-2 / content-3;
-		// grid-template-columns: repeat(3, 1fr);
-		// grid-template-rows: 50px 400px;
-		// gap: 0.5rem 1.5rem;
-
 		h2 {
 			margin-bottom: 0;
 		}
