@@ -7,8 +7,8 @@ skills:
     - SCSS
     - WordPress
     - PHP
-link: "https://shortsonmars.netlify.app/"
-gitLink: "https://github.com/nicolajnnielsen/ShortsOnMars"
+link: "https://ninn.xyz/"
+gitLink: "https://github.com/nicolajnnielsen/IgglesBlitz"
 hightlight: true
 description: WordPress Theme
 images: [

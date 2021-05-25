@@ -6,8 +6,8 @@ skills:
     - JS
     - React
     - SCSS
-link: "https://shortsonmars.netlify.app/"
-gitLink: "https://github.com/nicolajnnielsen/ShortsOnMars"
+link: "https://nicolajnielsen.netlify.app/"
+gitLink: "https://github.com/nicolajnnielsen/Portfolio"
 hightlight: false
 description: My Portfolio site
 images: [
