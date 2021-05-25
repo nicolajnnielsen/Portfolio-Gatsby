@@ -2,6 +2,8 @@
 
 My portfolio site, showcasing some of my web development projects, built with Gatsby using markdown posts.
 
+Improved design, better focus styling and page transitions. Refactored contact page for better control of form and cleaner code.
+
 ## TODO
 - Split up code bundles
 - Add custom 404 page

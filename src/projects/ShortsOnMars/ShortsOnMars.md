@@ -10,7 +10,7 @@ skills:
     - Fetch
 link: "https://shortsonmars.netlify.app/"
 gitLink: "https://github.com/nicolajnnielsen/ShortsOnMars"
-hightlight: true
+hightlight: false
 description: React App
 images: [
     {

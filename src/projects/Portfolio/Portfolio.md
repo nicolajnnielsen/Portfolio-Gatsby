@@ -33,3 +33,7 @@ images: [
     },
 ]
 ---
+
+My portfolio made suing Create-React-App, and a few third party components such as React-Router, Framer-Motion for the page transitions and React-Image-Gallery for the slideshows on project pages.
+
+Design isn't my strongest suit so I've tried to make a fairly simple and clear design. With a narrow color scheme. I really like the skeumorphic trend and have used that since it goes well with the simplicity.

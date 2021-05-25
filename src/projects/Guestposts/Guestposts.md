@@ -20,3 +20,7 @@ images: [
     },
 ]
 ---
+
+A WordPress site developed during a 4 week internship. Custom theme based on the UnderScores starter theme using BootStrap. The site is for a new linkbuilding platform.
+
+The project involved a lot of more backend tasks, from adding post-types and allowing post submissions from the frontend. Additional data fields were also added with the help of Advanced Custom Fields.
